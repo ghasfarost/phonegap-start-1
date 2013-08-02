@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<link href='http://fonts.googleapis.com/css?family=Caesar+Dressing' rel='stylesheet' type='text/css'>
+	<script type="text/javascript">
+
+	google.load("feeds", "1");
+
+	function initialize() {
+		var feed = new google.feeds.Feed("http://blog-peliculas.es/feed");
+		feed.load(function(result) {
+			if (!result.error) {
+				var container = document.getElementById("feed");
+				for (var i = 0; i < result.feed.entries.length; i++) {
+					var entry = result.feed.entries[i];
+					var div = document.createElement("div");
+					div.appendChild(document.createTextNode(entry.link));
+					container.appendChild(div);
+				}
+			}
+		});
+	}
+	google.setOnLoadCallback(initialize);
+
+	</script>
+	<style type="text/css">
+
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+	ul {
+
+	}
+
+	ul li {
+		margin: 10px;
+		padding: 10px;
+		font-family: 'Caesar Dressing', cursive;
+		list-style: none;
+	}
+
+	ul li:hover {
+		background-color: #888;
+	}
+	</style>
+</head>
+<body>
+	<ul id="feed"></ul>
+</body>
+</html>

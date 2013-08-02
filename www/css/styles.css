@@ -1,0 +1,48 @@
+#galeria {
+	margin: 0 auto;
+	width: 90%;
+	min-width: 340px;
+	text-align: center;
+}
+
+.foto {
+	display: inline-block;
+	margin: 10px;
+}
+
+.foto h3 {
+	display: none;
+	position: absolute;
+	background-color: rgba(0,0,0,0.5);
+	margin: 0;
+	padding: 10px;
+}
+
+.foto img {
+	width: 25%;
+	height: 25%;
+}
+
+.foto:hover h3 {
+	display: block;
+}
+
+section p {
+	text-align: justify;
+	max-width: 900px;
+	min-width: 340px;
+	letter-spacing: 2px;
+	word-spacing: 5px;
+	text-indent: 40px;
+	text-transform: uppercase;
+	line-height: 20px;
+	font-style: italic;
+}
+
+section p:first-child { 
+	font-size: 36px;
+}
+
+section p:hover {
+	
+}
